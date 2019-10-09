@@ -6,8 +6,10 @@ import Image from "./components/Image";
 import axios from "axios";
 
 function App() {
+  const todayFull = new Date();
+  const today = todayFull.getFullYear() + "-" + todayFull.getMonth() + "-" + todayFull.getDate();
   const [data, setData] = useState({});
-  const [newDate, setNewDate] = useState("2019-10-08");
+  const [newDate, setNewDate] = useState(today);
   const [submit, setSubmit] = useState(true)
 
   useEffect(() => {

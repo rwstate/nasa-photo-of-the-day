@@ -10,7 +10,7 @@ const Header = (props) => {
             <h3>{props.data.date}</h3>
             <p>{props.data.explanation}</p>
             <form onSubmit={handleSubmit}>
-                Change Date (MM-DD-YYYY)
+                Change Date (YYYY-MM-DD)
                 <input type="text" name="test" value={props.newDate} 
                     onChange={e => props.setNewDate(e.target.value)}>
                 </input>
