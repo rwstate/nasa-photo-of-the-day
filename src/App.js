@@ -11,6 +11,16 @@ function App() {
   const [data, setData] = useState({});
   const [newDate, setNewDate] = useState(today);
   const [submit, setSubmit] = useState(true)
+  const [colorIndex, setColorIndex] = useState("white")
+
+  const randomFive = () => {
+    return Math.floor(Math.random() * 5)
+}
+
+
+  useEffect(() => {
+    setColorIndex(randomFive())
+  }, [submit]);
 
   useEffect(() => {
     axios
@@ -23,7 +33,7 @@ function App() {
     <div className="App">
       <Image data={data}/>
       <Header data={data} newDate={newDate} setNewDate={setNewDate}
-      setSubmit={setSubmit} submit={submit}/>
+      setSubmit={setSubmit} submit={submit} colorIndex={colorIndex}/>
     </div>
   );
 };
